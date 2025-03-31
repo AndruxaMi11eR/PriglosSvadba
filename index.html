@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-
     <style>
         body {
             font-family: 'Playfair Display', serif;
@@ -33,21 +31,6 @@
             font-size: 36px;
         }
 
-        .map-container {
-            text-align: center;
-            padding: 40px 0;
-            font-size: 22px;
-        }
-
-        #map {
-            width: 90%;
-            max-width: 800px;
-            height: 450px;
-            margin: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
         .content {
             padding: 60px;
             text-align: center;
@@ -61,12 +44,6 @@
             border-radius: 10px;
             color: white;
             font-size: 22px;
-        }
-
-        .countdown {
-            font-size: 26px;
-            margin-top: 40px;
-            color: black;
         }
 
         .contacts {
@@ -87,11 +64,6 @@
         <p>Оренбург, ул. Восточная, 15А, Ресторан «Роза ветров»</p>
     </header>
 
-    <div class="map-container">
-        <h2>Место проведения</h2>
-        <div id="map"></div>
-    </div>
-
     <div class="content">
         <div class="form-container">
             <h3>Подтвердите свое присутствие</h3>
@@ -106,9 +78,6 @@
                 <button type="submit">Отправить</button>
             </form>
         </div>
-        
-        <h2>До нашей свадьбы осталось:</h2>
-        <div id="countdown" class="countdown"></div>
     </div>
 
     <div class="contacts">
@@ -116,42 +85,6 @@
         <p>Андрей: 89010843962</p>
         <p>Анастасия: 89018908885</p>
     </div>
-
-    <script>
-        const weddingDate = new Date('August 1, 2025 15:00:00 GMT+0500');
-
-        function updateCountdown() {
-            const now = new Date();
-            const timeDifference = weddingDate - now;
-
-            if (timeDifference <= 0) {
-                document.getElementById('countdown').innerHTML = 'Событие уже прошло!';
-                return;
-            }
-
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-            document.getElementById('countdown').innerHTML = ${days} дней ${hours} часов ${minutes} минут ${seconds} секунд;
-        }
-
-        setInterval(updateCountdown, 1000);
-
-        ymaps.ready(init);
-        function init() {
-            var map = new ymaps.Map("map", {
-                center: [51.767775, 55.097027],
-                zoom: 16
-            });
-            var placemark = new ymaps.Placemark([51.767775, 55.097027], {
-                hintContent: "Ресторан «Роза ветров»",
-                balloonContent: "Оренбург, ул. Восточная, 15А"
-            });
-            map.geoObjects.add(placemark);
-        }
-    </script>
 
 </body>
 </html>
