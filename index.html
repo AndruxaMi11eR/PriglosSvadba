@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадебный сайт Андрея и Анастасии</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #F5F5DC;
+            color: black;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 24px;
+        }
+
+        header h1, header h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+        }
+
+        .map-container {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 22px;
+        }
+
+        #map {
+            width: 90%;
+            max-width: 800px;
+            height: 450px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            padding: 60px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .form-container {
+            margin-top: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+            font-size: 22px;
+        }
+
+        .countdown {
+            font-size: 26px;
+            margin-top: 40px;
+            color: black;
+        }
+
+        .contacts {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Свадьба</h1>
+        <h2>Андрея и Анастасии</h2>
+        <p>1 августа 2025 года в 15:00</p>
+        <p>Оренбург, ул. Восточная, 15А, Ресторан «Роза ветров»</p>
+    </header>
+
+    <div class="map-container">
+        <h2>Место проведения</h2>
+        <div id="map"></div>
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <h3>Подтвердите свое присутствие</h3>
+            <form id="RSVPForm" method="POST" action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" target="hidden_iframe">
+                <input type="text" id="fullName" name="entry.YOUR_NAME_FIELD_ID" placeholder="Введите ФИО" required>
+                <select id="attendance" name="entry.YOUR_ATTENDANCE_FIELD_ID" required>
+                    <option value="">Выберите статус</option>
+                    <option value="Я буду">Я буду</option>
+                    <option value="Меня не будет">Меня не будет</option>
+                    <option value="Пока не решил(а)">Пока не решил(а)</option>
+                </select>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+        
+        <h2>До нашей свадьбы осталось:</h2>
+        <div id="countdown" class="countdown"></div>
+    </div>
+
+    <div class="contacts">
+        <p>Контактные номера:</p>
+        <p>Андрей: 89010843962</p>
+        <p>Анастасия: 89018908885</p>
+    </div>
+
+    <script>
+        const weddingDate = new Date('August 1, 2025 15:00:00 GMT+0500');
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = weddingDate - now;
+
+            if (timeDifference <= 0) {
+                document.getElementById('countdown').innerHTML = 'Событие уже прошло!';
+                return;
+            }
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = ${days} дней ${hours} часов ${minutes} минут ${seconds} секунд;
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        ymaps.ready(init);
+        function init() {
+            var map = new ymaps.Map("map", {
+                center: [51.767775, 55.097027],
+                zoom: 16
+            });
+            var placemark = new ymaps.Placemark([51.767775, 55.097027], {
+                hintContent: "Ресторан «Роза ветров»",
+                balloonContent: "Оренбург, ул. Восточная, 15А"
+            });
+            map.geoObjects.add(placemark);
+        }
+    </script>
+
+</body>
+</html>
