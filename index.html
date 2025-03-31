@@ -73,16 +73,16 @@
     <div class="content">
         <div class="form-container">
             <h3>Подтвердите свое присутствие</h3>
-            <form id="RSVPForm" method="POST" action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse" target="hidden_iframe">
-                <input type="text" id="fullName" name="entry.YOUR_NAME_FIELD_ID" placeholder="Введите ФИО" required>
-                <select id="attendance" name="entry.YOUR_ATTENDANCE_FIELD_ID" required>
-                    <option value="">Выберите статус</option>
-                    <option value="Я буду">Я буду</option>
-                    <option value="Меня не будет">Меня не будет</option>
-                    <option value="Пока не решил(а)">Пока не решил(а)</option>
-                </select>
-                <button type="submit">Отправить</button>
-            </form>
+            <form id="RSVPForm" method="POST" action="https://script.google.com/macros/s/AKfycbyuggIhqAzHN_0lPJ0TsJfZLYmG8SrixI4yGcW9goD5RRzPIUn8RmgTIWssMnLrhL1b5Q/exec">
+    <input type="text" name="fullName" placeholder="Введите ФИО" required>
+    <select name="attendance" required>
+        <option value="">Выберите статус</option>
+        <option value="Я буду">Я буду</option>
+        <option value="Меня не будет">Меня не будет</option>
+        <option value="Пока не решил(а)">Пока не решил(а)</option>
+    </select>
+    <button type="submit">Отправить</button>
+</form>
         </div>
     </div>
 
