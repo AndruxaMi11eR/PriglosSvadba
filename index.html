@@ -137,7 +137,8 @@
         })
         .then(response => response.text())
         .then(text => {
-            if (text.trim() === "OK") {
+            console.log('Ответ сервера:', text.trim());
+            if (text.trim().toUpperCase() === "OK") {
                 const successMessage = document.getElementById("successMessage");
                 successMessage.classList.add("show");
                 setTimeout(() => {
@@ -148,7 +149,10 @@
                 alert("Произошла ошибка. Пожалуйста, попробуйте снова.");
             }
         })
-        .catch(() => alert("Произошла ошибка. Пожалуйста, попробуйте снова."));
+        .catch(error => {
+            console.error('Ошибка при отправке формы:', error);
+            alert("Произошла ошибка. Пожалуйста, попробуйте снова.");
+        });
     }
     </script>
 
