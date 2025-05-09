@@ -1,175 +1,108 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свадебное приглашение</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Playfair Display', serif;
-            background: url('https://avatars.mds.yandex.net/get-shedevrum/11083974/img_9044c36748e711ef92e202959e69e003/orig') no-repeat center center fixed;
-            background-size: cover;
-            color: black;
-            margin: 0;
-            padding: 0;
-            font-size: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            font-size: 24px;
-        }
-
-        header h1, header h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 60px;
-        }
-
-        .content {
-            padding: 60px;
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .form-container {
-            margin-top: 40px;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 30px;
-            border-radius: 10px;
-            color: white;
-            font-size: 18px;
-        }
-
-        .contacts {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            text-align: center;
-            padding: 30px;
-            font-size: 15px;
-        }
-
-        .success-message {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 128, 0, 0.9);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 10px;
-            font-size: 20px;
-            z-index: 999;
-            text-align: center;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Андрей и Анастасия</h1>
-        <h2>1 августа 2025 года</h2>
-        <h3>Мы женимся!</h3>
-        <p>Дорогие наши родные и близкие,</p>
-        <p>мы рады сообщить вам,</p>
-        <p>что <strong>01.08.2025 года</strong></p>
-        <p>состоится наша свадьба!</p>
-        <p>В 15:30 будет организован сбор гостей,</p>
-        <p>а в 16:00 начнется торжественная церемония бракосочетания</p>
-        <p>по адресу: <strong>Оренбург, ул. Брестская, 7/3, Банкетный зал «L.Hall»</strong></p>
-        <p>Этот счастливый день мы хотим разделить именно с вами!</p>
-    </header>
-    
+ <html lang="ru">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Свадебное приглашение</title>
+ 
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+ 
+     <style>
+         body {
+             font-family: 'Playfair Display', serif;
+             background: url('https://avatars.mds.yandex.net/get-shedevrum/11083974/img_9044c36748e711ef92e202959e69e003/orig') no-repeat center center fixed;
+             background-size: cover;
+             color: black;
+             margin: 0;
+             padding: 0;
+             font-size: 20px;
+         }
+ 
+         header {
+             text-align: center;
+             padding: 60px;
+             background: rgba(0, 0, 0, 0.6);
+             color: white;
+             font-size: 24px;
+         }
+ 
+         header h1, header h2 {
+             font-family: 'Great Vibes', cursive;
+             font-size: 60px;
+         }
+ 
+         .content {
+             padding: 60px;
+             text-align: center;
+             font-size: 18px;
+         }
+ 
+         .form-container {
+             margin-top: 40px;
+             background-color: rgba(0, 0, 0, 0.8);
+             padding: 30px;
+             border-radius: 10px;
+             color: white;
+             font-size: 18px;
+         }
+ 
+         .contacts {
+             background: rgba(0, 0, 0, 0.5);
+             color: white;
+             text-align: center;
+             padding: 30px;
+             font-size: 15px;
+         }
+     </style>
+ </head>
+ <body>
+ 
+     <header>
+         <h1>Андрей и Анастасия</h1>
+         <h2>1 августа 2025 года</h2>
+         <h3>Мы женимся!</h3>
+         <p>Дорогие наши родные и близкие,</p>
+         <p>мы рады сообщить вам,</p>
+         <p>что <strong>01.08.2025 года</strong></p>
+         <p>состоится наша свадьба!</p>
+         <p>В 15:30 будет организован сбор гостей,</p>
+         <p>а в 16:00 начнется торжественная церемония бракосочетания</p>
+         <p>по адресу: <strong>Оренбург, ул. Брестская, 7/3, Банкетный зал «L.Hall»</strong></p>
+         <p>Этот счастливый день мы хотим разделить именно с вами!</p>
+     </header>
+     
     <div class="content">
-        <div class="form-container">
-            <p>Мы будем вам очень признательны,</p>
-            <p>если при выборе наряда на наше торжество,</p>
-            <p>вы воздержитесь от ярких цветов и принтов в одежде</p>
-           <p>и выберете приглушенные пастельные оттенки</p>
-           <p>(например: бежевый, нежно-розовый, нежно-голубой, лавандовый и т.д.)</p>
-           <p>или классический черный цвет в своем образе.</p>
-       </div>
-   </div>
-    
-    <div class="content">
-        <div class="form-container">
-            <h3>Подтвердите свое присутствие</h3>
-            <form id="RSVPForm" method="POST" action="https://script.google.com/macros/s/AKfycbyuggIhqAzHN_0lPJ0TsJfZLYmG8SrixI4yGcW9goD5RRzPIUn8RmgTIWssMnLrhL1b5Q/exec" onsubmit="handleFormSubmit(event)">
-                <input type="text" name="fullName" placeholder="Введите ФИО" required>
-                <select name="attendance" required>
-                    <option value="">Выберите статус</option>
-                    <option value="Я буду">Я буду</option>
-                    <option value="Меня не будет">Меня не будет</option>
-                    <option value="Пока не решил(а)">Пока не решил(а)</option>
-                </select>
-                <button type="submit">Отправить</button>
-            </form>
-        </div>
+         <div class="form-container">
+             <p>Мы будем вам очень признательны,</p>
+             <p>если при выборе наряда на наше торжество,</p>
+             <p>вы воздержитесь от ярких цветов и принтов в одежде<p>
+            <p>и выберете приглушенные пастельные оттенки</p>
+            <p>(например: бежевый, нежно-розовый, нежно-голубой, лавандовый и т.д.)</p>
+            <p>или классический черный цвет в своем образе.</p>
     </div>
-
-    <div class="contacts">
-        <p>Контактные номера:</p>
-        <p>Андрей: 89010843962</p>
-        <p>Анастасия: 89018908885</p>
     </div>
-
-    <div id="successMessage" class="success-message">Спасибо! Ваш ответ успешно отправлен.</div>
-
-    <script>
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        
-        // Отправляем запрос без использования окна подтверждения
-        fetch(form.action, {
-            method: form.method,
-            body: formData
-        })
-        .then(response => response.text())
-        .then(text => {
-            console.log('Ответ сервера:', text.trim());
-            // Проверяем, что ответ содержит OK независимо от регистра
-            if (text.trim().toUpperCase().includes("OK")) {
-                const successMessage = document.getElementById("successMessage");
-                successMessage.classList.add("show");
-                setTimeout(() => {
-                    successMessage.classList.remove("show");
-                    window.location.href = "https://andruxami11er.github.io/PriglosSvadba/"; // Ваш сайт
-                }, 2000);
-            } else {
-                // Заменили стандартное сообщение ошибки на кастомное
-                const successMessage = document.getElementById("successMessage");
-                successMessage.textContent = "Спасибо! Ваш ответ успешно отправлен";
-                successMessage.classList.add("show");
-                setTimeout(() => {
-                    successMessage.classList.remove("show");
-                }, 2000);
-            }
-        })
-        .catch(error => {
-            console.error('Ошибка при отправке формы:', error);
-            // Кастомная ошибка
-            const successMessage = document.getElementById("successMessage");
-            successMessage.textContent = "Спасибо! Ваш ответ успешно отправлен";
-            successMessage.classList.add("show");
-            setTimeout(() => {
-                successMessage.classList.remove("show");
-            }, 2000);
-        });
-    }
-    </script>
-
-</body>
-</html>
+     
+     <div class="content">
+         <div class="form-container">
+             <h3>Подтвердите свое присутствие</h3>
+             <form id="RSVPForm" method="POST" action="https://script.google.com/macros/s/AKfycbyuggIhqAzHN_0lPJ0TsJfZLYmG8SrixI4yGcW9goD5RRzPIUn8RmgTIWssMnLrhL1b5Q/exec">
+     <input type="text" name="fullName" placeholder="Введите ФИО" required>
+     <select name="attendance" required>
+         <option value="">Выберите статус</option>
+         <option value="Я буду">Я буду</option>
+         <option value="Меня не будет">Меня не будет</option>
+         <option value="Пока не решил(а)">Пока не решил(а)</option>
+     </select>
+     <button type="submit">Отправить</button>
+ </form>
+         </div>
+     </div>
+   <div class="contacts">
+         <p>Контактные номера:</p>
+         <p>Андрей: 89010843962</p>
+         <p>Анастасия: 89018908885</p>
+     </div>
+ 
+ </body>
+ </html>
