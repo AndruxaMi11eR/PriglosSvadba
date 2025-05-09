@@ -138,12 +138,13 @@
         .then(response => response.text())
         .then(text => {
             console.log('Ответ сервера:', text.trim());
-            if (text.trim().toUpperCase() === "OK") {
+            // Проверяем, что ответ содержит OK независимо от регистра
+            if (text.trim().toUpperCase().includes("OK")) {
                 const successMessage = document.getElementById("successMessage");
                 successMessage.classList.add("show");
                 setTimeout(() => {
                     successMessage.classList.remove("show");
-                    window.location.href = "https://andruxami11er.github.io/PriglosSvadba/"; // Замените на ваш основной URL
+                    window.location.href = "https://andruxami11er.github.io/PriglosSvadba"; // Замените на ваш основной URL
                 }, 3000);
             } else {
                 alert("Произошла ошибка. Пожалуйста, попробуйте снова.");
