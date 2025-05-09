@@ -93,6 +93,17 @@
     
     <div class="content">
         <div class="form-container">
+            <p>Мы будем вам очень признательны,</p>
+            <p>если при выборе наряда на наше торжество,</p>
+            <p>вы воздержитесь от ярких цветов и принтов в одежде</p>
+           <p>и выберете приглушенные пастельные оттенки</p>
+           <p>(например: бежевый, нежно-розовый, нежно-голубой, лавандовый и т.д.)</p>
+           <p>или классический черный цвет в своем образе.</p>
+       </div>
+   </div>
+    
+    <div class="content">
+        <div class="form-container">
             <h3>Подтвердите свое присутствие</h3>
             <form id="RSVPForm" method="POST" action="https://script.google.com/macros/s/AKfycbyuggIhqAzHN_0lPJ0TsJfZLYmG8SrixI4yGcW9goD5RRzPIUn8RmgTIWssMnLrhL1b5Q/exec" onsubmit="handleFormSubmit(event)">
                 <input type="text" name="fullName" placeholder="Введите ФИО" required>
@@ -126,18 +137,21 @@
         })
         .then(response => response.text())
         .then(text => {
+            console.log('Ответ сервера:', text.trim());
+            // Проверяем, что ответ содержит OK независимо от регистра
             if (text.trim().toUpperCase().includes("OK")) {
                 const successMessage = document.getElementById("successMessage");
                 successMessage.classList.add("show");
                 setTimeout(() => {
                     successMessage.classList.remove("show");
-                    window.location.href = "https://andruxami11er.github.io/PriglosSvadba/";
+                    window.location.href = "https://andruxami11er.github.io/PriglosSvadba/"; // Ваш сайт
                 }, 2000);
             } else {
                 alert("Произошла ошибка. Пожалуйста, попробуйте снова.");
             }
         })
         .catch(error => {
+            console.error('Ошибка при отправке формы:', error);
             alert("Произошла ошибка. Пожалуйста, попробуйте снова.");
         });
     }
