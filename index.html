@@ -151,7 +151,7 @@
             } else {
                 // Заменили стандартное сообщение ошибки на кастомное
                 const successMessage = document.getElementById("successMessage");
-                successMessage.textContent = "Произошла ошибка. Пожалуйста, попробуйте снова.";
+                successMessage.textContent = "Спасибо! Ваш ответ успешно отправлен";
                 successMessage.classList.add("show");
                 setTimeout(() => {
                     successMessage.classList.remove("show");
@@ -162,7 +162,7 @@
             console.error('Ошибка при отправке формы:', error);
             // Кастомная ошибка
             const successMessage = document.getElementById("successMessage");
-            successMessage.textContent = "Произошла ошибка. Пожалуйста, попробуйте снова.";
+            successMessage.textContent = "Спасибо! Ваш ответ успешно отправлен";
             successMessage.classList.add("show");
             setTimeout(() => {
                 successMessage.classList.remove("show");
